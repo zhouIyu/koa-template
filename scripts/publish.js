@@ -26,7 +26,6 @@ const getVersion = async () => {
 const main = async () => {
     const version = await getVersion();
     shell.echo(`\nReleasing ${version} ...\n`);
-    await shell.exec('npm run release -- --release-as ${version}');
     await shell.exec('npm run changelog');
     await shell.exec('git push --follow-tags origin master');
 

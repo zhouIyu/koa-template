@@ -1,7 +1,7 @@
 {
 	"name": "koa-template",
 	"version": "0.1.0",
-	"description": "",
+	"description": "以Koa为基础打造Node的模板",
 	"main": "index.js",
 	"scripts": {
 		"start": "NODE_ENV=development nodemon src/app.js",
