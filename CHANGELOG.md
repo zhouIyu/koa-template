@@ -1,6 +1,11 @@
 # 0.1.0 (2020-11-18)
 
 
+### Bug Fixes
+
+* **router:** 修复引用错误 ([1e2898b](https://github.com/zhouIyu/koa-template/commit/1e2898b6f75734c8ef5e6f4b0543255b0a5dd3fe))
+
+
 ### Features
 
 * **db:** 添加mongoose数据库插件 ([66af346](https://github.com/zhouIyu/koa-template/commit/66af3460ecfb8b93d0c948f223e499adf2d67c01))
