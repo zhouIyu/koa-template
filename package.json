@@ -1,6 +1,6 @@
 {
 	"name": "koa-template",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -9,7 +9,7 @@
 		"commit": "git-cz",
 		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
 		"release": "standard-version",
-		"publish": "node ./scripts/publish.js"
+		"push": "node ./scripts/publish.js"
 	},
 	"repository": {
 		"type": "git",
