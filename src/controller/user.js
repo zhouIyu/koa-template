@@ -1,6 +1,6 @@
 const UserModel = require('../model/user');
 const { resConfig } = require('../utils/response');
-const JWT = require('../utils/verify');
+const JWT = require('../utils/jwt');
 
 class UserController {
     static async register (ctx) {

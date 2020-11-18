@@ -32,7 +32,7 @@ class App {
     start () {
         this.init();
         const port = config.get('port');
-        app.listen(port, () => {
+        this.app.listen(port, () => {
             console.log(`runing in http://localhost:${port}`);
         });
     }
