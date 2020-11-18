@@ -2,6 +2,7 @@ const Koa = require('koa');
 const config = require('config');
 const cors = require('@koa/cors');
 const body = require('koa-body');
+const db = require('./utils/db');
 const errorHandle = require('./middlewares/errorHandle');
 const loadRoutes = require('./utils/router');
 
@@ -21,6 +22,7 @@ class App {
     }
 
     init () {
+        db(config.get('db.uri'));
         this.preMiddlewre();
         loadRoutes(this.app);
     }

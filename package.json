@@ -29,7 +29,8 @@
 		"glob": "^7.1.6",
 		"koa": "^2.13.0",
 		"koa-body": "^4.2.0",
-		"log4js": "^6.3.0"
+		"log4js": "^6.3.0",
+		"mongoose": "^5.10.15"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
