@@ -1,8 +1,9 @@
 const UserModel = require('../model/user');
 const { resConfig } = require('../utils/response');
+const JWT = require('../utils/verify');
 
 class UserController {
-    static async createUser (ctx) {
+    static async register (ctx) {
         const body = ctx.request.body;
         const user = await UserModel.findOne(body);
         if (user) {
@@ -11,7 +12,7 @@ class UserController {
         const newUser = new UserModel(body);
         await newUser.save();
         ctx.success({}, '注册成功');
-    };
+    }
 
     static async login (ctx) {
         const body = ctx.request.body;
@@ -20,7 +21,8 @@ class UserController {
         if (!user) {
             return ctx.error({}, '用户名或者密码错误');
         }
-        ctx.success(user, '登录成功');
+        const token = JWT.setToken(UserController.handleUserInfo(user));
+        ctx.success({ token }, '登录成功');
     }
 
     static async mine (ctx) {

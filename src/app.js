@@ -4,6 +4,7 @@ const cors = require('@koa/cors');
 const body = require('koa-body');
 const db = require('./utils/db');
 const errorHandle = require('./middlewares/errorHandle');
+const auth = require('./middlewares/auth');
 const loadRoutes = require('./utils/router');
 
 class App {
@@ -19,6 +20,7 @@ class App {
         this.use(body({}));
         this.use(cors());
         this.use(errorHandle());
+        this.use(auth());
     }
 
     init () {
