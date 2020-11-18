@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const config = require('config');
 const errorHandle = require('./middlewares/errorHandle');
+const loadRoutes = require('./utils/router');
 
 class App {
     constructor (app) {
@@ -17,6 +18,7 @@ class App {
 
     init () {
         this.preMiddlewre();
+        loadRoutes(this.app);
     }
 
     start () {
