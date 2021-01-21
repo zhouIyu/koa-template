@@ -12,11 +12,11 @@ class App {
         this.app = app;
     }
 
-    use (middlewre) {
-        this.app.use(middlewre);
+    use (middleware) {
+        this.app.use(middleware);
     }
 
-    preMiddlewre () {
+    preMiddleware () {
         this.use(body({}));
         this.use(cors());
         this.use(errorHandle());
@@ -25,7 +25,7 @@ class App {
 
     init () {
         db(config.get('db.uri'));
-        this.preMiddlewre();
+        this.preMiddleware();
         loadRoutes(this.app);
     }
 
@@ -33,7 +33,7 @@ class App {
         this.init();
         const port = config.get('port');
         this.app.listen(port, () => {
-            console.log(`runing in http://localhost:${port}`);
+            console.log(`running in http://localhost:${port}`);
         });
     }
 }
